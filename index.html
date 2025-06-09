@@ -12,11 +12,14 @@
   <button onclick="mostrarMensagem()">Clique aqui</button>
   <p id="mensagem"></p>
 
+  <!-- Botão de instalar será criado pelo JS -->
+
   <script src="app.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log('Service Worker registrado!'));
+        .then(() => console.log('Service Worker registrado!'))
+        .catch(err => console.error('Erro no registro do SW:', err));
     }
   </script>
 </body>
